@@ -1,0 +1,23 @@
+﻿
+#FOR DEVELOPMENT
+// Final release vertion 1.0.0
+**** Write Scaffold **********************
+//Windows
+scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Write" -ContextDir "DbContexts" -Context "WriteDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails  -f
+
+**** Read Scaffold ***********************
+//Windows
+scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Read" -ContextDir "DbContexts" -Context "ReadDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails -f
+ 
+
+
+
+............IBOSDDD........
+
+**** Write Scaffold **********************
+//Windows
+scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=CRM;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Write" -ContextDir "DbContexts" -Context "WriteDbContext"  -t dbo.Tickets,dbo.Users,dbo.TicketMovements,dbo.TicketContents,dbo.StandingDatas,dbo.BusinessUnits -f
+
+**** Read Scaffold ***********************
+//Windows
+scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=CRM;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Read" -ContextDir "DbContexts" -Context "ReadDbContext"  -t dbo.Tickets,dbo.Users,dbo.TicketMovements,dbo.TicketContents,dbo.StandingDatas,dbo.BusinessUnits -f
