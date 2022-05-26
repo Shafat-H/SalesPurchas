@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Api\\SalePurchase\\SalePurchase.csproj": {}
+    "D:\\Personal\\SalesPurchas\\SalePurchase.csproj": {}
   },
   "projects": {
-    "F:\\Api\\SalePurchase\\SalePurchase.csproj": {
+    "D:\\Personal\\SalesPurchas\\SalePurchase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Api\\SalePurchase\\SalePurchase.csproj",
+        "projectUniqueName": "D:\\Personal\\SalesPurchas\\SalePurchase.csproj",
         "projectName": "SalePurchase",
-        "projectPath": "F:\\Api\\SalePurchase\\SalePurchase.csproj",
-        "packagesPath": "C:\\Users\\Shafat\\.nuget\\packages\\",
-        "outputPath": "F:\\Api\\SalePurchase\\obj\\",
+        "projectPath": "D:\\Personal\\SalesPurchas\\SalePurchase.csproj",
+        "packagesPath": "C:\\Users\\shafa\\.nuget\\packages\\",
+        "outputPath": "D:\\Personal\\SalesPurchas\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Shafat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

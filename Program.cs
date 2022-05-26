@@ -27,6 +27,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IPartner, PartnerConfig>();
 builder.Services.AddTransient<IItem, ItemConfig>();
 builder.Services.AddTransient<IPartnerTypee, PartnerTypeConfig>();
+builder.Services.AddTransient<IPurchase, PurchaseCon>();
+builder.Services.AddTransient<ISales, SalesCon>();
+
 
 var app = builder.Build();
 
