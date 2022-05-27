@@ -2,10 +2,11 @@
 using SalePurchase.DTO;
 using SalePurchase.Helper;
 using SalePurchase.IRepository;
+using System.Linq;
 
 namespace SalePurchase.Repository
 {
-    public class PurchaseCon:IPurchase
+    public class PurchaseCon : IPurchase
     {
         private readonly ReadDbContext contextR;
         private readonly WriteDbContext contextW;
@@ -33,7 +34,7 @@ namespace SalePurchase.Repository
                 var itemlist = new List<Models.Write.TblItem>();
                 foreach (var item in create.Row)
                 {
-                    var itm = contextW.TblItems.Where(x=>x.IntItemId==item.IntItemId).FirstOrDefault();
+                    var itm = contextW.TblItems.Where(x => x.IntItemId == item.IntItemId).FirstOrDefault();
                     if (itm != null)
                     {
                         itm.NumStockQuantity = item.NumItemQuantity;
@@ -50,12 +51,12 @@ namespace SalePurchase.Repository
                     }
                 }
 
-                if(puDetailsList.Count > 0)
+                if (puDetailsList.Count > 0)
                 {
                     contextW.TblPurchaseDetails.AddRange(puDetailsList);
                     await contextW.SaveChangesAsync();
                 }
-                if(itemlist.Count > 0)
+                if (itemlist.Count > 0)
                 {
                     contextW.TblItems.UpdateRange(itemlist);
                     await contextW.SaveChangesAsync();
@@ -65,6 +66,33 @@ namespace SalePurchase.Repository
                     Message = "Purches Successfully",
                     statuscode = 200
                 };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<List<ItemwiseDailyPurchaseDTO>> itemWiseDailyReport(long itemid, DateTime reportdate)
+        {
+            try
+            {
+                var data = await Task.FromResult((from a in contextR.TblPurchaseDetails
+                                                  join b in contextR.TblItems on a.IntItemId equals b.IntItemId
+                                                  where a.IntItemId == itemid
+                                                  && a.IsActive == true
+                                                  group new { a, b } by new { a.IntItemId, b.StrItemName, b.NumStockQuantity } into g
+                                                  select new ItemwiseDailyPurchaseDTO
+                                                  {
+                                                      IntItemId = g.Key.IntItemId,
+                                                      StrItemName = g.Key.StrItemName,
+                                                      NumStockQuantity=g.Key.NumStockQuantity,
+                                                      TotalNumItemQuantity=g.Sum(x=>x.a.NumItemQuantity),
+                                                      TotalNumItemCost=g.Sum(x=>x.a.NumUnitPrice*x.a.NumItemQuantity)
+                                                  }).ToList());
+                return data;
+
             }
             catch (Exception)
             {

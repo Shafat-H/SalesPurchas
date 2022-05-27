@@ -22,5 +22,13 @@ namespace SalePurchase.Controllers
             var data =await repository.createPurchase(create);
             return Ok(data);
         }
+
+        [HttpGet]
+        [Route("itemWiseDailyReport")]
+        public async Task<List<ItemwiseDailyPurchaseDTO>> itemWiseDailyReport(long itemid, DateTime reportdate)
+        {
+            var data  =  await repository.itemWiseDailyReport(itemid, reportdate);
+            return data;
+        }
     }
 }
