@@ -79,9 +79,11 @@ namespace SalePurchase.Repository
             try
             {
                 var data = await Task.FromResult((from a in contextR.TblPurchaseDetails
+                                                  join c in contextR.TblPurchases on a.IntPurchaseId equals c.IntPurchaseId
                                                   join b in contextR.TblItems on a.IntItemId equals b.IntItemId
                                                   where a.IntItemId == itemid
                                                   && a.IsActive == true
+                                                  && c.DtePurchaseDate.Date == reportdate.Date
                                                   group new { a, b } by new { a.IntItemId, b.StrItemName, b.NumStockQuantity } into g
                                                   select new ItemwiseDailyPurchaseDTO
                                                   {

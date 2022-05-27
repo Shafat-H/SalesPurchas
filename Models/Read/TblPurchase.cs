@@ -7,7 +7,7 @@ namespace SalePurchase.Models.Read
     {
         public long IntPurchaseId { get; set; }
         public long? IntSupplierId { get; set; }
-        public DateTime? DtePurchaseDate { get; set; }
+        public DateTime DtePurchaseDate { get; set; }
         public bool? IsActive { get; set; }
     }
 }
