@@ -49,6 +49,7 @@ namespace SalePurchase.Repository
                                 IntSalesId = saleshead.IntSalesId,
                                 IntItemId = item.IntItemId,
                                 NumItemQuantity = item.NumItemQuantity,
+                                NumUnitPrice=item.NumUnitPrice,
                                 IsActive= true
                             };
                             rowList.Add(salesrow);

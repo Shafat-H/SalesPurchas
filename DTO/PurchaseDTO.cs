@@ -3,14 +3,14 @@
     public class PurchaseDTO
     {
         public long IntPurchaseId { get; set; }
-        public long? IntSupplierId { get; set; }
+        public long IntSupplierId { get; set; }
         public DateTime? DtePurchaseDate { get; set; }
         public bool? IsActive { get; set; }
     }
 
     public class CreatePurchaseDTO
     {
-        public long? IntSupplierId { get; set; }
+        public long IntSupplierId { get; set; }
     }
     public class PurchaseDetailsDTO
     {

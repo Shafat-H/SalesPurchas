@@ -37,7 +37,7 @@ namespace SalePurchase.Repository
                     var itm = contextW.TblItems.Where(x => x.IntItemId == item.IntItemId).FirstOrDefault();
                     if (itm != null)
                     {
-                        itm.NumStockQuantity = item.NumItemQuantity;
+                        itm.NumStockQuantity =itm.NumStockQuantity+ item.NumItemQuantity;
                         itemlist.Add(itm);
                         var ent = new Models.Write.TblPurchaseDetail()
                         {

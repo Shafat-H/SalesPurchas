@@ -3,11 +3,11 @@
 // Final release vertion 1.0.0
 **** Write Scaffold **********************
 //Windows
-scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Write" -ContextDir "DbContexts" -Context "WriteDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails  -f
+scaffold-DbContext "Data Source=SHAFAT\SQLEXPRESS;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Write" -ContextDir "DbContexts" -Context "WriteDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails  -f
 
 **** Read Scaffold ***********************
 //Windows
-scaffold-DbContext "Data Source=DESKTOP-PSHD8LV;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Read" -ContextDir "DbContexts" -Context "ReadDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails -f
+scaffold-DbContext "Data Source=SHAFAT\SQLEXPRESS;Initial Catalog=MPSales;Connect Timeout=30;Encrypt=False;Trusted_Connection=True;ApplicationIntent=ReadWrite;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models/Read" -ContextDir "DbContexts" -Context "ReadDbContext"  -t tblItem,tblPartnerType ,tblPartner ,tblSales ,tblSalesDetails ,tblPurchase ,tblPurchaseDetails -f
  
 
 
